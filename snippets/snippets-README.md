@@ -48,3 +48,6 @@ Security note
 
 CKS / 1.34 note
 - These snippets include common security primitives (Pod Security Admission labels, seccomp, AppArmor, securityContext settings, NetworkPolicy and imagePullSecrets) useful when practicing for CKS v1.34. Keep them in your allowed GitHub tab for quick reference.
+
+Issue scenarios
+- `issue-scenarios/` — practical exam-style troubleshooting scenarios (CrashLoopBackOff, Service endpoints, PVC Pending, scheduling failures, ImagePullBackOff). Each scenario contains diagnostic commands and copy/paste fixes.
