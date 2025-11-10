@@ -1,5 +1,9 @@
 # Snippets index
 
+> NOTE: There's a decorated quick index available at `README.md` (open first) which is optimized for exam-time browsing.
+>
+>This file remains an exhaustive list of snippets. See `README.md` for the short, organized entrypoint.
+
 This folder contains quick, exam-friendly YAML snippets you can copy/paste during CKA practice and (if allowed) keep on your GitHub exam tab.
 
 Files and purpose
