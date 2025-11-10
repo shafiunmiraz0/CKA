@@ -280,4 +280,3 @@ kubectl describe svc <service-name>
 
 ---
 
-*For more detailed examples and advanced configurations, refer to the snippets directory.*
