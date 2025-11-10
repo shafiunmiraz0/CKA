@@ -48,6 +48,7 @@ Additional snippets added
 - `cronjob-concurrency.yaml` — CronJob example with concurrencyPolicy
 - `job-backoff.yaml` — Job example showing backoffLimit
 - `ingress-basic.yaml` — Basic ingress manifest for testing
+ - `cka-quick-templates.md` — Extra commands and quick YAML templates (deployments, statefulset, storageclass, snapshots, quotas)
 
 How to use
 - Open the file in your editor or on your allowed GitHub tab and copy the manifest you need.
