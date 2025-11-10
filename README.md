@@ -63,13 +63,11 @@ This decorated README is optimized for quick browsing during practice or the exa
 - `prometheus-basic.yaml` — minimal Prometheus
 - `fluentbit-daemonset.yaml` — logging DaemonSet
 
+
+
 ## Troubleshooting scenarios (start here)
-Open the `issue-scenarios/` folder. High-value items:
-- `1-pod-crashloop.md`
-- `2-service-not-reachable.md`
-- `3-pvc-pending.md`
-- `11-coredns-issues.md`
-- `20-pod-stuck-terminating.md`
+Open the `Troubleshooting/` folder. High-value items:
+See the [Admin Setup Guide](./Troubleshooting/issue-scenarios/README.md) for more details.
 
 
 - Keep this README and `cka-quick-templates.md` open in your allowed GitHub tab; they contain the fastest copy/paste manifests.
