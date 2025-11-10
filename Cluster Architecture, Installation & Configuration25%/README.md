@@ -62,3 +62,12 @@ Notes
 	```
 
 Keep this README as a quick paste source for kubeadm and node-level commands during practice.
+
+Snippets
+- You can find ready-to-use YAML snippets in the repository `snippets/` folder (relative path from this file):
+	- `../snippets/pv-hostpath.yaml` (hostPath PV)
+	- `../snippets/storageclass.yaml` (StorageClass example)
+	- `../snippets/rbac-role-sa.yaml` (ServiceAccount / Role / RoleBinding)
+	- `../snippets/configmap-secret.yaml` (ConfigMap and Secret examples)
+		- `../snippets/snippets-README.md` (index of all snippets)
+

@@ -61,3 +61,11 @@ Quick troubleshooting tips
 - Networking issues: run a DNS/utility pod and use `nslookup`, `ping`, `curl` between pods.
 
 Keep this README as the go-to place for pasteable debug commands and small debug pod manifests.
+
+Snippets
+- Useful debug and support snippets are available in `../snippets/` (relative to this README):
+	- `../snippets/initcontainers.yaml` (initContainers example)
+	- `../snippets/job.yaml` (Job example)
+	- `../snippets/cronjob.yaml` (CronJob example)
+		- `../snippets/snippets-README.md` (index of all snippets)
+

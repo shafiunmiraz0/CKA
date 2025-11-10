@@ -84,3 +84,17 @@ Scheduling primitives
 Notes
 - Practice converting requirements into pod spec fields quickly (resources, nodeSelector, tolerations, affinity).
 - Keep small YAML snippets (Deployments, DaemonSets, StatefulSets, Jobs) on your permitted GitHub tab for quick reuse during the exam.
+
+Snippets
+- A larger set of exam-style snippets and per-resource YAML lives in the `snippets/` folder (relative to this README):
+	- `../snippets/deployment.yaml` (Deployment example)
+	- `../snippets/daemonset.yaml` (DaemonSet example)
+	- `../snippets/statefulset.yaml` (StatefulSet + PVC template)
+	- `../snippets/job.yaml` and `../snippets/cronjob.yaml` (batch examples)
+	- `../snippets/hpa.yaml` (HPA example)
+	- `../snippets/rbac-role-sa.yaml` (RBAC example)
+	- `../snippets/configmap-secret.yaml` (ConfigMap/Secret examples)
+	- `../snippets/initcontainers.yaml` (initContainers example)
+	- `../snippets/resourcequota-limitrange.yaml` (ResourceQuota / LimitRange)
+	- `../snippets/snippets-README.md` (index of all snippets)
+

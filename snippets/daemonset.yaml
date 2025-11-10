@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: ds-example
+spec:
+  selector:
+    matchLabels:
+      name: ds-example
+  template:
+    metadata:
+      labels:
+        name: ds-example
+    spec:
+      containers:
+      - name: pause
+        image: k8s.gcr.io/pause:3.5

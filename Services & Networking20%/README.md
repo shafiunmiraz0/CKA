@@ -68,3 +68,11 @@ spec:
 Notes
 - CNI plugins implement pod networking (Flannel, Calico, Weave). If pods are NotReady or NotRunning after init, check CNI installation (`kubectl -n kube-system get pods`).
 - For kube-proxy checks: `kubectl -n kube-system get pods -l k8s-app=kube-proxy` and `kubectl -n kube-system describe daemonset kube-proxy`.
+
+Snippets
+- Relevant YAML snippets for networking are in `../snippets/` (relative to this README):
+		- `../snippets/snippets-README.md` (index of all snippets)
+		- `../snippets/ingress-tls.yaml` (Ingress with TLS example)
+		- `../snippets/networkpolicy-deny-allow.yaml` (NetworkPolicy example)
+		- `../snippets/configmap-secret.yaml` (ConfigMap/Secret examples)
+

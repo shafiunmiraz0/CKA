@@ -56,3 +56,11 @@ volumeBindingMode: Immediate
 
 Notes
 - On managed cloud clusters, use cloud storage classes (AWS EBS, GCE PD, Azure Disk). For the exam/lab, hostPath and a simple storageclass may be acceptable for tests.
+
+Snippets
+- Storage-related snippets are in `../snippets/` (relative to this README):
+	- `../snippets/pvc.yaml` (PersistentVolumeClaim)
+	- `../snippets/pv-hostpath.yaml` (hostPath PersistentVolume)
+	- `../snippets/storageclass.yaml` (StorageClass example)
+		- `../snippets/snippets-README.md` (index of all snippets)
+
