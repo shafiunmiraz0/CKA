@@ -69,3 +69,34 @@ Snippets
 	- `../snippets/cronjob.yaml` (CronJob example)
 		- `../snippets/snippets-README.md` (index of all snippets)
 
+Security commands & snippets
+- Security-focused troubleshooting commands:
+	- `kubectl auth can-i --list --all-namespaces` — list actions the current user can perform
+	- `kubectl get events -A --sort-by=.metadata.creationTimestamp` — spot security-related failures (imagepull, secrets)
+	- `kubectl get podsecuritypolicy` — PSP is deprecated; prefer Pod Security Admission namespace labels (see snippets)
+- Useful snippets for debugging security posture:
+	- Pod Security Admission labels: `../snippets/podsecurity-namespace-labels.yaml`
+	- seccomp/apparmor examples to test runtime enforcement: `../snippets/seccomp-pod.yaml`, `../snippets/apparmor-pod.yaml`
+
+CKA 1.34 / Debug & admin commands
+- Cluster dump for debugging (control-plane & events):
+	- `kubectl cluster-info dump --output-directory=./cluster-dump`
+- Metrics & resource troubleshooting:
+	- `kubectl top nodes`
+	- `kubectl top pods -n <ns>`
+	- `kubectl describe node <node>` (look for scheduling, pressure conditions)
+- Ephemeral debugging and injection:
+	- `kubectl debug -it pod/<pod> --image=busybox --target=<container>`
+
+Observability & logging commands
+- If metrics-server is installed, get resource metrics:
+	- `kubectl top nodes`
+	- `kubectl top pods -n <ns>`
+- Prometheus quick checks (if installed):
+	- Port-forward Prometheus UI: `kubectl port-forward -n monitoring svc/prometheus 9090:9090`
+	- Check scrape targets via the Prometheus UI (Targets page)
+- Logging DaemonSet checks (Fluent Bit/Fluentd):
+	- `kubectl get daemonset -n kube-logging`
+	- `kubectl logs -n kube-logging <fluent-bit-pod>`
+	- `kubectl describe daemonset fluent-bit -n kube-logging`
+

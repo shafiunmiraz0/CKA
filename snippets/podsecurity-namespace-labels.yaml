@@ -1,0 +1,20 @@
+## Pod Security Admission - namespace labels examples
+
+# Enforce Restricted policy on namespace 'secure'
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: secure
+  labels:
+    pod-security.kubernetes.io/enforce: "restricted"
+    pod-security.kubernetes.io/enforce-version: "latest"
+
+---
+# Allow baseline (less strict) on namespace 'dev'
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev
+  labels:
+    pod-security.kubernetes.io/enforce: "baseline"
+    pod-security.kubernetes.io/audit: "baseline"

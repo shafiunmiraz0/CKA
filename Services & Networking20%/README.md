@@ -76,3 +76,27 @@ Snippets
 		- `../snippets/networkpolicy-deny-allow.yaml` (NetworkPolicy example)
 		- `../snippets/configmap-secret.yaml` (ConfigMap/Secret examples)
 
+Security commands & snippets
+- Quick security/network checks:
+	- `kubectl get networkpolicy -n <ns>` — view network policies in a namespace
+	- `kubectl describe networkpolicy <name> -n <ns>` — inspect rules
+	- Use a debug pod to test connectivity: `kubectl run -i --tty dnsutils --image=tianon/dnsutils --restart=Never --rm -- bash -il`
+- Useful snippets:
+	- Restrictive NetworkPolicy example: `../snippets/networkpolicy-restrict-egress.yaml`
+	- Pod Security Admission labels: `../snippets/podsecurity-namespace-labels.yaml`
+
+CKA 1.34 / Networking & admin commands
+- Inspect API resources / services:
+	- `kubectl api-resources`
+	- `kubectl get endpointslice -A` (if EndpointSlice feature in use)
+	- `kubectl get svc -A` / `kubectl get ep -A`
+- Debugging network stack from node and control plane:
+	- `kubectl cluster-info dump --namespaces=kube-system` to inspect controller logs and kube-proxy state
+	- Use `kubectl port-forward` for local access to services: `kubectl port-forward svc/my-svc 8080:80`
+
+Observability & logging (snippets + commands)
+- Install metrics-server for `kubectl top` and cluster metrics: see `../snippets/metrics-server.yaml`.
+- Prometheus basic test deployment and port-forward: `../snippets/prometheus-basic.yaml` then `kubectl port-forward -n monitoring svc/prometheus 9090:9090`.
+- Check endpoints / targets in Prometheus UI and `kubectl get servicemonitor -A` if using the operator.
+- Fluent Bit/Fluentd logging DaemonSet example: `../snippets/fluentbit-daemonset.yaml`. Check logs with `kubectl logs -n kube-logging daemonset/fluent-bit` or pod logs if DaemonSet created pods.
+

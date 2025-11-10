@@ -64,3 +64,19 @@ Snippets
 	- `../snippets/storageclass.yaml` (StorageClass example)
 		- `../snippets/snippets-README.md` (index of all snippets)
 
+Security commands & snippets
+- Secret & encryption-related commands:
+	- Create image pull secret: `kubectl create secret docker-registry regcred --docker-server=<registry> --docker-username=<user> --docker-password=<pass> -n <ns>`
+	- Check for secrets in a namespace: `kubectl get secrets -n <ns>`
+- Useful storage-security snippets:
+	- `../snippets/imagepullsecret.yaml` — docker registry secret example
+	- Use PVC and StorageClass snippets for secure provisioning: `../snippets/pvc.yaml`, `../snippets/storageclass.yaml`
+
+CKA 1.34 / Storage & admin commands
+- Inspect volumes and PVC binding quickly:
+	- `kubectl get pv,pvc -A`
+	- `kubectl describe pvc <pvc> -n <ns>`
+	- `kubectl get sc` (list StorageClasses)
+- Snapshot / restore (if CSI snapshotter installed):
+	- Use the snapshot CRDs - `VolumeSnapshot` / `VolumeSnapshotClass` (cluster-dependent)
+

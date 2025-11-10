@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: probes-demo
+spec:
+  containers:
+  - name: httpbin
+    image: kennethreitz/httpbin:latest
+    ports:
+    - containerPort: 80
+    livenessProbe:
+      httpGet:
+        path: /status/200
+        port: 80
+      initialDelaySeconds: 15
+      periodSeconds: 20
+    readinessProbe:
+      httpGet:
+        path: /status/200
+        port: 80
+      initialDelaySeconds: 5
+      periodSeconds: 10
+  restartPolicy: Always

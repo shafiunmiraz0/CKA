@@ -98,3 +98,17 @@ Snippets
 	- `../snippets/resourcequota-limitrange.yaml` (ResourceQuota / LimitRange)
 	- `../snippets/snippets-README.md` (index of all snippets)
 
+	CKA 1.34 / Workloads & scheduling commands
+	- Scheduling and priority commands:
+		- Create/inspect PriorityClasses: `kubectl get priorityclass` and `kubectl apply -f ../snippets/priorityclass.yaml`
+		- Preemption/priority debugging: check `kubectl describe pod <pod>` for preemption events
+	- Probes & lifecycle checks:
+		- Use `kubectl describe pod <pod>` and `kubectl logs <pod>` to diagnose readiness/liveness failures; sample probes in `../snippets/liveness-readiness.yaml`
+	- RuntimeClass usage:
+		- Apply `RuntimeClass` and reference it in pod spec: `runtimeClassName: kata-runtime` (see `../snippets/runtimeclass.yaml`)
+
+	Observability snippets & checks
+	- Ensure metrics-server is running for HPA and `kubectl top`: `../snippets/metrics-server.yaml`
+	- Use Prometheus basic example to validate scraping and metrics: `../snippets/prometheus-basic.yaml`
+	- Use Fluent Bit DaemonSet for basic log collection: `../snippets/fluentbit-daemonset.yaml`
+

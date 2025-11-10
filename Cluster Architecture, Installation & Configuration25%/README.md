@@ -71,3 +71,27 @@ Snippets
 	- `../snippets/configmap-secret.yaml` (ConfigMap and Secret examples)
 		- `../snippets/snippets-README.md` (index of all snippets)
 
+Security commands & snippets
+- Quick security checks:
+	- `kubectl auth can-i <verb> <resource> -n <ns>` — test RBAC for current user
+	- `kubectl get networkpolicy -A` — list NetworkPolicy objects
+	- `kubectl get secrets -n kube-system` — check secrets in control plane namespace
+- Useful snippets (see `../snippets/snippets-README.md`):
+	- Pod Security Admission namespace labels: `../snippets/podsecurity-namespace-labels.yaml`
+	- seccomp & AppArmor pod examples: `../snippets/seccomp-pod.yaml`, `../snippets/apparmor-pod.yaml`
+	- imagePullSecret template: `../snippets/imagepullsecret.yaml`
+
+CKA 1.34 / Admin commands
+- Maintenance & admin commands cheat sheet: `../snippets/cluster-maintenance-commands.md`
+- Scheduling / maintenance examples:
+	- `kubectl cordon <node>`
+	- `kubectl drain <node> --ignore-daemonsets --delete-local-data`
+	- `kubectl uncordon <node>`
+	- `kubeadm certs check-expiration`
+	- `kubeadm certs renew all`
+
+Observability & monitoring
+- Install and check metrics-server for resource metrics (used by HPA and `kubectl top`): `../snippets/metrics-server.yaml`
+- Basic Prometheus for scraping and debugging: `../snippets/prometheus-basic.yaml` (namespace `monitoring`)
+- Logging DaemonSet sample (Fluent Bit): `../snippets/fluentbit-daemonset.yaml`
+
