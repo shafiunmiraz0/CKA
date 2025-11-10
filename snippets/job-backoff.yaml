@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: flaky-job
+  namespace: default
+spec:
+  backoffLimit: 4
+  template:
+    spec:
+      containers:
+      - name: flaky
+        image: busybox:1.35.0
+        command: ["/bin/sh","-c","exit 1"]
+      restartPolicy: Never

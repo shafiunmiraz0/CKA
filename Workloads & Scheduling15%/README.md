@@ -112,3 +112,16 @@ Snippets
 	- Use Prometheus basic example to validate scraping and metrics: `../snippets/prometheus-basic.yaml`
 	- Use Fluent Bit DaemonSet for basic log collection: `../snippets/fluentbit-daemonset.yaml`
 
+More quick kubectl commands (workloads)
+- `kubectl get all -n <ns>` — quick view of workload resources in a namespace
+- `kubectl patch deploy <name> -p '...'` — edit specific fields quickly (image, resources, probes)
+- `kubectl rollout restart deployment/<name>` — force a rolling restart
+- `kubectl set image deployment/<name> <container>=<image>` — update image quickly
+- `kubectl edit deploy/<name>` — open editor to make changes fast
+- `kubectl scale --replicas=<n> deployment/<name>` — scale replicas
+- `kubectl cordon <node>` / `kubectl drain <node> --ignore-daemonsets --delete-local-data` — maintenance operations
+
+Added snippet references
+- `../snippets/cronjob-concurrency.yaml` — CronJob concurrency examples
+- `../snippets/job-backoff.yaml` — Job with backoff/retries example
+

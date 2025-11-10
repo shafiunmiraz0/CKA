@@ -62,6 +62,17 @@ Quick troubleshooting tips
 
 Keep this README as the go-to place for pasteable debug commands and small debug pod manifests.
 
+Extra quick troubleshooting commands
+- `kubectl get events -A --sort-by=.metadata.creationTimestamp` — show recent events cluster-wide
+- `kubectl get all -n <ns>` — quick snapshot of namespace resources
+- `kubectl logs -f <pod> -c <container> --since=1h` — tail logs from the last hour
+- `kubectl cp <pod>:/path/file ./localfile -n <ns>` — copy files from pod to local filesystem
+- `kubectl auth can-i create pods -n <ns>` — verify permissions quickly
+
+Added snippet references
+- `../snippets/dnsutils-debug.yaml` — dnsutils pod for DNS troubleshooting
+- `../snippets/busybox-debug.yaml` — BusyBox debug pod for quick execs
+
 Snippets
 - Useful debug and support snippets are available in `../snippets/` (relative to this README):
 	- `../snippets/initcontainers.yaml` (initContainers example)

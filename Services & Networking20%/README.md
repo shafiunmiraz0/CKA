@@ -100,3 +100,14 @@ Observability & logging (snippets + commands)
 - Check endpoints / targets in Prometheus UI and `kubectl get servicemonitor -A` if using the operator.
 - Fluent Bit/Fluentd logging DaemonSet example: `../snippets/fluentbit-daemonset.yaml`. Check logs with `kubectl logs -n kube-logging daemonset/fluent-bit` or pod logs if DaemonSet created pods.
 
+More quick kubectl/networking commands
+- `kubectl describe svc <svc> -n <ns>` — inspect service selectors and ports
+- `kubectl get endpointslices -n <ns>` — check EndpointSlice objects for services
+- `kubectl proxy --port=8001` — access the API locally via proxy for ad-hoc requests
+- `kubectl port-forward <pod|svc> 8080:80 -n <ns>` — forward ports for testing
+- `kubectl apply -f ../snippets/networkpolicy-allow-dns.yaml` — apply DNS-allow NetworkPolicy snippet
+
+Added snippet references
+- `../snippets/networkpolicy-allow-dns.yaml` — allow DNS egress policy example
+- `../snippets/ingress-basic.yaml` — simple ingress example for testing
+

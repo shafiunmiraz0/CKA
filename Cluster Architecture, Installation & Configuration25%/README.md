@@ -95,3 +95,14 @@ Observability & monitoring
 - Basic Prometheus for scraping and debugging: `../snippets/prometheus-basic.yaml` (namespace `monitoring`)
 - Logging DaemonSet sample (Fluent Bit): `../snippets/fluentbit-daemonset.yaml`
 
+More admin & troubleshooting commands
+- `kubectl get all -A` — quick view of cluster resources across namespaces
+- `kubectl get componentstatuses` — check core component statuses (deprecated on some clusters)
+- `kubectl api-resources` / `kubectl api-versions` — discover resources available in the cluster
+- `kubectl auth can-i <verb> <resource> -n <ns>` — test RBAC for current user
+- `kubectl cluster-info dump --output-directory=./cluster-dump` — collect cluster debug info
+
+Added snippet references
+- `../snippets/rbac-clusterrolebinding.yaml` — example ClusterRole and ClusterRoleBinding for debug access
+- `../snippets/secret-tls.yaml` — TLS secret example
+

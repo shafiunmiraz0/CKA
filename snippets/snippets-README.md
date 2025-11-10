@@ -39,6 +39,16 @@ Files and purpose
  - `prometheus-basic.yaml` — minimal single-node Prometheus (ConfigMap + Deployment + Service)
  - `fluentbit-daemonset.yaml` — Fluent Bit DaemonSet + ConfigMap for cluster logging example
 
+Additional snippets added
+- `networkpolicy-allow-dns.yaml` — NetworkPolicy to allow DNS egress for pods
+- `rbac-clusterrolebinding.yaml` — ClusterRole + ClusterRoleBinding example (debug-view)
+- `dnsutils-debug.yaml` — dnsutils pod for DNS troubleshooting
+- `busybox-debug.yaml` — BusyBox debug pod for quick execs
+- `secret-tls.yaml` — TLS secret example (base64 placeholders)
+- `cronjob-concurrency.yaml` — CronJob example with concurrencyPolicy
+- `job-backoff.yaml` — Job example showing backoffLimit
+- `ingress-basic.yaml` — Basic ingress manifest for testing
+
 How to use
 - Open the file in your editor or on your allowed GitHub tab and copy the manifest you need.
 - Keep filenames short and use `kubectl apply -f <file>` to quickly create resources.

@@ -80,3 +80,12 @@ CKA 1.34 / Storage & admin commands
 - Snapshot / restore (if CSI snapshotter installed):
 	- Use the snapshot CRDs - `VolumeSnapshot` / `VolumeSnapshotClass` (cluster-dependent)
 
+More quick storage commands
+- `kubectl describe pvc <pvc> -n <ns>` — view events for a PVC
+- `kubectl get pv -o wide` — list PVs with capacity and reclaim policy
+- `kubectl patch pvc <name> -p '{"spec":{"resources":{"requests":{"storage":"2Gi"}}}}'` — expand PVC (if storage class allows expansion)
+
+Added snippet references
+- `../snippets/pv-hostpath.yaml` — hostPath PV example for labs
+- `../snippets/networkpolicy-allow-dns.yaml` — sometimes required when storage controllers need DNS access
+
