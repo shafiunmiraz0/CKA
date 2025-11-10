@@ -8,7 +8,7 @@ WORKDIR /usr/share/nginx/html
 COPY . /usr/share/nginx/html/
 
 # Use a custom nginx config that enables autoindex and serves markdown as text
-COPY nginx-autoindex.conf /etc/nginx/conf.d/default.conf
+COPY /Containerization/nginx-autoindex.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 80
+EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]
