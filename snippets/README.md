@@ -63,8 +63,7 @@ Open the `issue-scenarios/` folder. High-value items:
 - `11-coredns-issues.md`
 - `20-pod-stuck-terminating.md`
 
-## Quick usage tips
-- Use `tools\open-snippet.ps1` to copy a snippet to the clipboard quickly.
+
 - Keep this README and `cka-quick-templates.md` open in your allowed GitHub tab; they contain the fastest copy/paste manifests.
 
 ---
