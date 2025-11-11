@@ -125,3 +125,25 @@ Added snippet references
 - `../snippets/cronjob-concurrency.yaml` — CronJob concurrency examples
 - `../snippets/job-backoff.yaml` — Job with backoff/retries example
 
+## Scenarios (practical walkthroughs)
+
+Practical, exam-focused scenarios with commands, YAML templates and troubleshooting steps live in the `scenarios/` folder. Use these during timed practice to run through common CKA tasks.
+
+- `scenarios/deployment-management.md` — create/update/rollout/scale patterns for Deployments
+- `scenarios/deployment-rollout.md` — pause/resume, rollout status/history/undo
+- `scenarios/deployment-scale.md` — manual scaling and HPA examples
+- `scenarios/deployment-secret.md` — using Secrets with Deployments (env, volume)
+- `scenarios/configuration-secrets.md` — ConfigMap + Secret usage and deployment examples
+- `scenarios/deployment-history.md` — revisions, `revisionHistoryLimit`, and safe rollbacks
+- `scenarios/deployment-issue.md` — common Deployment failures and remediation
+- `scenarios/rollback.md` — focused rollback examples and quick recovery commands
+- `scenarios/pod.md` — Pod quick reference (probes, resources, scheduling)
+- `scenarios/pod-basics.md` — Pod basics and creation examples
+- `scenarios/pod-service.md` — Pod + Service examples (ClusterIP/NodePort testing)
+- `scenarios/pod-service-1.md` — additional Pod+Service sample with test commands
+- `scenarios/statefulsets-daemonsets.md` — StatefulSet / DaemonSet patterns and PVC notes
+- `scenarios/scaling-updates.md` — scaling and update strategy notes
+- `scenarios/service-integration.md` — service integration and debugging tips
+- `scenarios/advanced-scheduling.md` — affinity, anti-affinity, taints/tolerations, priority
+
+
