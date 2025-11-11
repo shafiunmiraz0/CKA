@@ -1,12 +1,144 @@
-# CKA
-CKA Commands and YAML Templates Sheet
+# CKA — Study Materials & Exam Preparation
+
+CKA Commands and YAML Templates Sheet for Kubernetes v1.30+
 
 <!-- Place the PNG `Periodic Table of Kubernetes Commands.png` into the `images/` folder. -->
 ![Periodic Table of Kubernetes Commands](Periodic%20Table%20of%20Kubernetes%20Commands.png)
 
 The image is handy during study; you can also keep the PNG in a GitHub repo open in the exam-allowed GitHub tab.
 
-# Snippets — Quick index & exam toolbox
+---
+
+## 🚀 **EXAM-TIME QUICK LINKS** (Open these first during exam!)
+
+**Start here on exam day:**
+1. **[EXAM_QUICK_START.md](./EXAM_QUICK_START.md)** ← Strategy, time management, problem categories
+2. **[QUICK_COMMANDS_ALL_DOMAINS.md](./QUICK_COMMANDS_ALL_DOMAINS.md)** ← Command cheat sheet (Ctrl+F to search)
+3. **[EXAM_MEMORIZATION_CHECKLIST.md](./EXAM_MEMORIZATION_CHECKLIST.md)** ← Last-minute review (20 must-know commands)
+4. **[Troubleshooting/issue-scenarios/](./Troubleshooting/issue-scenarios/)** ← Diagnostic playbooks (25+ scenarios)
+
+**Keep these two browser tabs open during exam:**
+- Tab 1: `https://kubernetes.io` (official docs)
+- Tab 2: Your GitHub repo (above 4 files bookmarked)
+
+---
+
+## 📚 **How to Use This Repository**
+
+### Before Exam (Study Phase)
+- Read through domain-specific README files in each folder
+- Work through scenario examples in `Troubleshooting/issue-scenarios/`
+- Practice with YAML snippets from `cka-quick-templates.md`
+- Do 1-2 full practice exams (2 hours each, timed)
+
+### During Exam (2 Hours, 17 Problems)
+- **First 5 min:** Read ALL problems, mark difficulty (easy/medium/hard)
+- **Next 90 min:** Solve easy + medium problems (10-12 problems)
+- **Final 25 min:** Attempt hard problems or review
+
+### Problem-Solving Approach
+1. Identify domain (Cluster, Workload, Network, Storage, Security, or Troubleshooting)
+2. Open matching folder README or find scenario in `Troubleshooting/issue-scenarios/`
+3. Copy command/YAML template from this repo
+4. Customize for your specific problem
+5. Apply (`kubectl apply -f`) and verify
+6. Move to next problem
+
+---
+
+## 📂 **Repository Folder Guide**
+
+### Exam Domains (with % of exam)
+
+| Domain | % | Quick Start | Deep Dive |
+|--------|---|-----------|-----------|
+| **Cluster Architecture, Installation & Config** | 25% | `./Cluster.../README.md` | `./Cluster.../scenarios/` |
+| **Workloads & Scheduling** | 15% | `./Workloads.../README.md` | `./Workloads.../scenarios/` |
+| **Services & Networking** | 20% | `./Services.../README.md` | `./Services.../scenarios/` |
+| **Storage** | 10% | `./Storage/README.md` | `./Storage/scenarios/` |
+| **Security** | 5-10% | RBAC snippets | `Troubleshooting/` |
+| **Troubleshooting** | 30% | `./Troubleshooting/README.md` | `./Troubleshooting/issue-scenarios/` |
+
+### Quick File Reference
+
+```
+├── EXAM_QUICK_START.md                  ← Exam strategy & problem categories
+├── EXAM_MEMORIZATION_CHECKLIST.md       ← Top 50 commands + YAML patterns
+├── QUICK_COMMANDS_ALL_DOMAINS.md        ← Command reference (searchable)
+├── DOMAIN_QUICK_SUMMARIES.md            ← 1-page per domain (coming soon)
+├── CKA-commands-cheatsheet.md           ← Full cheat sheet
+├── cka-quick-templates.md               ← Copy/paste YAML templates
+│
+├── Cluster.../README.md                 ← kubeadm, node mgmt, certs
+├── Workloads.../README.md               ← Deployments, Pods, scaling
+├── Services.../README.md                ← Services, Ingress, Networking
+├── Storage/README.md                    ← PV, PVC, StorageClass
+├── Troubleshooting/README.md            ← Debug commands
+├── Troubleshooting/issue-scenarios/     ← 25+ real scenarios (start here!)
+│
+└── snippets-README.md                   ← Full YAML snippet index
+```
+
+---
+
+## ⚡ **Top 20 Commands You MUST Memorize**
+
+If you memorize these 20, you'll score 60%+:
+
+1. `kubectl apply -f <file>`
+2. `kubectl get <resource> -A`
+3. `kubectl describe <resource> <name>`
+4. `kubectl logs <pod>`
+5. `kubectl exec -it <pod> -- /bin/sh`
+6. `kubectl scale deployment/<name> --replicas=5`
+7. `kubectl set image deployment/<name> container=image:tag`
+8. `kubectl rollout undo deployment/<name>`
+9. `kubectl rollout status deployment/<name>`
+10. `kubectl expose deployment/<name> --port=80`
+11. `kubectl get pvc -n <ns>`
+12. `kubectl create role <name> --verb=get --resource=pods`
+13. `kubectl auth can-i <verb> <resource>`
+14. `kubectl cordon <node>`
+15. `kubectl drain <node> --ignore-daemonsets --delete-local-data`
+16. `kubeadm init --pod-network-cidr=10.244.0.0/16`
+17. `kubeadm token create --print-join-command`
+18. `kubectl get events --sort-by=.metadata.creationTimestamp`
+19. `kubectl delete pod <pod> --grace-period=0 --force`
+20. `kubectl port-forward svc/<name> 8080:80`
+
+**See `EXAM_MEMORIZATION_CHECKLIST.md` for full list with examples.**
+
+---
+
+## 🔥 **Troubleshooting Quick Diagnostic Sequence**
+
+When a problem says "something is broken, fix it":
+
+```bash
+# Step 1: Overview
+kubectl get all -n <ns>
+
+# Step 2: Detailed status (usually shows the problem!)
+kubectl describe pod/<pod> -n <ns>
+
+# Step 3: Logs
+kubectl logs <pod> -n <ns> [--previous]
+
+# Step 4: Recent events
+kubectl get events -n <ns> --sort-by=.metadata.creationTimestamp
+
+# Step 5: Execute into pod
+kubectl exec -it <pod> -n <ns> -- /bin/sh
+
+# Step 6: Check node (if scheduling issue)
+kubectl describe node <node>
+```
+
+**This sequence solves 80% of troubleshooting problems!**
+
+---
+
+## Snippets — Quick index & exam toolbox
 
 This decorated README is optimized for quick browsing during practice or the exam.
 
