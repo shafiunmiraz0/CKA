@@ -9,26 +9,26 @@ Essential debugging commands, comprehensive troubleshooting scenarios, and minim
 Detailed step-by-step guides for common Kubernetes troubleshooting situations (30% of CKA exam):
 
 ### Pod & Workload Issues
-- **[Pod Troubleshooting Scenarios](./scenarios-pod-issue-1.md)** (CrashLoopBackOff, Pending)
+- **[Pod Troubleshooting Scenarios](./Troubleshooting/scenarios-pod-issue-1.md)** (CrashLoopBackOff, Pending)
   - Scenario 1: Pod CrashLoopBackOff (app crashes, exit codes, recovery)
   - Scenario 2: Pod Pending (resource constraints, scheduling, node issues)
   - Advanced: ImagePullBackOff, FailedMount, Evicted, Timeout, OOMKilled
 
-- **[Deployment Troubleshooting Scenarios](./scenarios-deployment-issues-1-4.md)** (Update issues, rollout problems)
+- **[Deployment Troubleshooting Scenarios](./Troubleshooting/scenarios-deployment-issues-1-4.md)** (Update issues, rollout problems)
   - Pods not running (readiness probes, crash loops)
   - Not Up-To-Date (image tags, rollout strategy)
   - Stuck Rollout (probe timeouts, failed pods)
   - Rollback issues (revision history, restore)
   - Includes full debugging workflow and command reference
 
-- **[Workload Troubleshooting Scenarios](./scenarios-workload-issues.md)** (CronJob, DaemonSet)
+- **[Workload Troubleshooting Scenarios](./Troubleshooting/scenarios-workload-issues.md)** (CronJob, DaemonSet)
   - CronJob not running (suspended, schedule validation, permissions)
   - CronJob cleanup (history limits, old jobs)
   - DaemonSet incomplete nodes (taints, selectors, resources)
   - DaemonSet slow rollout (update strategy tuning)
 
 ### Infrastructure & Control Plane Issues
-- **[Infrastructure Troubleshooting Scenarios](./scenarios-infrastructure-issues.md)** (Node, Kubelet, ETCD, API Server)
+- **[Infrastructure Troubleshooting Scenarios](./Troubleshooting/scenarios-infrastructure-issues.md)** (Node, Kubelet, ETCD, API Server)
   - Node Not Ready (kubelet crashes, disk space, certificates, runtime issues)
   - Kubelet certificate expiry (rotation, renewal)
   - Controller Manager issues (resource limits, API connectivity)
@@ -36,21 +36,21 @@ Detailed step-by-step guides for common Kubernetes troubleshooting situations (3
   - Kube-Proxy issues (mode incompatibility, network rules)
 
 ### Storage & Resource Issues
-- **[Storage Troubleshooting Scenarios](./scenarios-storage-issues.md)** (PV, PVC, Provisioning)
+- **[Storage Troubleshooting Scenarios](./Troubleshooting/scenarios-storage-issues.md)** (PV, PVC, Provisioning)
   - PersistentVolume stuck Available (access modes, capacity, selectors)
   - PersistentVolumeClaim Pending (storage class, provisioner, binding)
   - Dynamic provisioning failures (credentials, quota, backend issues)
   - Pod can't mount volume (references, timeouts, mismatches)
 
 ### Configuration & Access Issues
-- **[Config & Access Troubleshooting Scenarios](./scenarios-config-access-issues.md)** (RBAC, ServiceAccount, kubeconfig)
+- **[Config & Access Troubleshooting Scenarios](./Troubleshooting/scenarios-config-access-issues.md)** (RBAC, ServiceAccount, kubeconfig)
   - ServiceAccount permission denied (missing roles, bindings)
   - ServiceAccount token not mounted (automount settings)
   - Kubeconfig not connecting (context, server, certificates, auth)
   - Kubectl port-forward not working (endpoints, firewall, ports)
 
 ### Networking Issues
-- **[Networking Troubleshooting Scenarios](./scenarios-networking-issues.md)** (Network Policy, DNS, Connectivity)
+- **[Networking Troubleshooting Scenarios](./Troubleshooting/scenarios-networking-issues.md)** (Network Policy, DNS, Connectivity)
   - Network policy blocking traffic (default deny, egress, selectors)
   - Traffic incorrectly allowed (overly permissive policies)
   - DNS pod cannot resolve (CoreDNS issues, ConfigMap, firewall)
